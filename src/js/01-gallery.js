@@ -2,8 +2,8 @@
 import { galleryItems } from './gallery-items';
 // Change code below this line
 
-import SimpleLightbox from "simplelightbox";
-import "simplelightbox/dist/simple-lightbox.min.css";
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const gallerySortItems = ({ preview, original, description }) => {
   return `
@@ -20,15 +20,16 @@ const gallerySortItems = ({ preview, original, description }) => {
 
 const gallerySortMarkup = galleryItems.map(gallerySortItems).join('');
 
-const galleryItemsList = document.querySelector(".gallery");
+console.log(gallerySortMarkup);
+
+const galleryItemsList = document.querySelector('.gallery');
 
 galleryItemsList.insertAdjacentHTML('beforeend', gallerySortMarkup);
 
 let lightbox = new SimpleLightbox('.gallery a', {
-    captions: true,
-    captionsData: "alt",
-    captionDelay: 250,
-
+  captions: true,
+  captionsData: 'alt',
+  captionDelay: 250,
 });
 
 console.log(galleryItems);
